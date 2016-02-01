@@ -8,7 +8,8 @@ from datetime import datetime
 
 def get_data(output, year=0):
     """
-    日足のデータをwww.forexite.comから取得して保存する。
+    分足のデータをwww.forexite.comから取得して保存する。
+    データに記載されている時刻はGMT+1。
     :param output: 保存先ディレクトリパス
     :param year: -1->全て、0->最新のみ、1以降->年数(2年以上10年以下)
     :return:
