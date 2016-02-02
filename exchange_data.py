@@ -4,6 +4,7 @@ import os
 import zipfile
 import tqdm
 from datetime import datetime
+from sys import stdout
 
 
 def get_data(output, year=0):
@@ -26,6 +27,10 @@ def get_data(output, year=0):
     out_file_path_ary = []
 
     print("データを取得中。")
+
+    # tqdmが非同期で、表示がずれるためいったんflush
+    stdout.flush()
+
     for data_url in tqdm.tqdm(urls):
         file_name = __get_name(data_url)
 
